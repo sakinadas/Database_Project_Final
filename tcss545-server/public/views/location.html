@@ -1,0 +1,39 @@
+<h3 class="page-header border border-top-0 border-left-0 border-right-0 border-dark">
+    {{location.name}}
+    <i class="fa fa-map-marker float-right"></i>
+</h3>
+<div class="row">
+    <div class="col-md-8 col-lg-6">
+        <p><i class="fa fa-address-card"></i> {{location.address}}</p>
+        <p><i class="fa fa-phone"></i> {{location.phone}}</p>
+    </div>
+    <div class="col-md-4 col-lg-6">
+        <div class="card">
+            <div class="card-body" ng-if="location.mapAddress">
+                <iframe frameborder="0" class="border-0 h-100 w-100 tall" src="{{location.mapAddress}}" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h4>Menu</h4>
+    <div class="row">
+        <div class="card ml-1 mb-1 bg-info" style="width: 20rem;" ng-repeat="category in menu">
+            <div class="card-body">
+                <h4 class="card-title"><a class="text-light" href="javascript:void(0)" ng-click="searchFor({type:category.name})"><i class="fa fa-coffee"></i> {{category.name}}</a></h4>
+                <p class="card-text text-light">{{category.description}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item" ng-repeat="item in category.offerings">
+                    <a href="javascript:void(0)" ng-click="searchFor({name:item.name})" class="text-dark">
+                        {{item.name}}
+                        <div class="offset-sm-3" ng-repeat="size in item.sizes | orderBy:'oz'">
+                            <span class="text-muted">{{size.name}} <small>~({{size.oz}}oz)</small></span>
+                            <span class="float-right badge badge-pill">${{size.price}}</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

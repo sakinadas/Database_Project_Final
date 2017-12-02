@@ -1,0 +1,9 @@
+{
+  "connectionLimit": 10,
+  "debug": false,
+  "host": "starbox.cuxvyvvp0hcj.us-east-1.rds.amazonaws.com",
+  "port": "3306",
+  "user": "root",
+  "password": "root123456",
+  "database": "tcss545"
+}

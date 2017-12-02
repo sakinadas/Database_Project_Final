@@ -1,0 +1,65 @@
+<h3 class="page-header border border-top-0 border-left-0 border-right-0 border-dark">
+    Search
+    <i class="fa fa-search float-right"></i>
+</h3>
+<form ng-submit="lookup()">
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Find offerings that match &hellip;</label>
+        <div class="col-sm-10">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="searchType" id="searchType1" value="ALL" ng-model="localSearch.searchType">
+                    <em>all</em> these conditions.
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="searchType" id="searchType2" value="ANY" ng-model="localSearch.searchType">
+                    <em>any</em> these conditions.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="offering-name" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+            <div class="input-group mb-2 mb-sm-0">
+                <input type="text" class="form-control" id="offering-name" placeholder="Offering name" ng-model="localSearch.name">
+                <div class="input-group-addon"><i class="fa fa-edit"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="offering-type" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-10">
+            <div class="input-group mb-2 mb-sm-0">
+                <input type="text" class="form-control" id="offering-type" placeholder="Offering type" ng-model="localSearch.type">
+                <div class="input-group-addon"><i class="fa fa-sitemap"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="offering-tags" class="col-sm-2 col-form-label">Tags</label>
+        <div class="col-sm-10">
+            <div class="input-group mb-2 mb-sm-0">
+                <input type="text" class="form-control" id="offering-tags" placeholder="Offering tags" ng-model="localSearch.tags">
+                <div class="input-group-addon"><i class="fa fa-tags"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="offering-ingredients" class="col-sm-2 col-form-label">Ingredients</label>
+        <div class="col-sm-10">
+            <div class="input-group mb-2 mb-sm-0">
+                <input type="text" class="form-control" id="offering-ingredients" placeholder="Offering ingredients" ng-model="localSearch.ingredients">
+                <div class="input-group-addon"><i class="fa fa-pagelines"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row float-right">
+            <button type="reset" class="btn btn-danger mr-2"><i class="fa fa-eraser"></i> Clear</button>
+            <button type="submit" class="btn btn-primary mr-2"><i class="fa fa-search"></i> Search</button>
+        </div>
+    </div>
+</form>

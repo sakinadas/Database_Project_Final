@@ -1,0 +1,21 @@
+<h3 class="page-header border border-top-0 border-left-0 border-right-0 border-dark">
+    {{offering.name}}
+    <i class="fa fa-coffee float-right"></i>
+</h3>
+<p>{{offering.description}}</p>
+<p class="alert alert-info"><i class="fa fa-sitemap"></i> This offering can be found in <a href="javascript:void(0)" ng-click="searchFor({type: offering.type.name})">{{offering.type.name}}</a>.</p>
+<p>
+    <a class="badge badge-pill badge-info mr-1 text-light" ng-repeat="tag in offering.tags" href="javascript:void(0);" ng-click="searchFor({tags: [tag.name]});">#{{tag.name | lowercase}}</a>
+</p>
+<h4 class="header mt-3">Ingredients</h4>
+<ul>
+    <li class="d-block" ng-repeat="ingredient in offering.ingredients" ng-click="searchFor({ingredients: [ingredient.name]})">
+        <a href="javascript:void(0)"><i class="fa fa-leaf"></i> {{ingredient.name | lowercase}}</a>
+    </li>
+</ul>
+<h4 class="header mt-3">Locations offering {{offering.name}}:</h4>
+<ul>
+    <li class="d-block" ng-repeat="location in offering.locations">
+        <a ng-href="#!/locations/{{location.id}}"><i class="fa fa-map-marker"></i> {{location.name}}</a>
+    </li>
+</ul>

@@ -1,0 +1,9 @@
+@media (min-width: 992px) {
+    .tall {
+        min-height: 300px;
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

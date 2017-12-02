@@ -1,0 +1,11 @@
+<div class="row container">
+    <div class="card ml-1 mb-1 bg-info" style="width: 20rem;" ng-repeat="category in menu">
+        <div class="card-body">
+            <h4 class="card-title"><a class="text-light" href="javascript:void(0)" ng-click="searchFor({type:category.name})"><i class="fa fa-coffee"></i> {{category.name}}</a></h4>
+            <p class="card-text text-light">{{category.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" ng-repeat="item in category.offerings"><a href="javascript:void(0)" ng-click="searchFor({name:item.name})" class="text-dark">{{item.name}}</a></li>
+        </ul>
+    </div>
+</div>
